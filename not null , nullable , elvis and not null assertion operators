@@ -1,0 +1,14 @@
+kotlin null pointer handling ->
+
+to assign null in datatype you need to first make it nullable by using ? keyword 
+val str : String? = null;
+if str is null then 
+str.toUpperCase() // it will through nullpointer exception , so to handle this we use
+str?.toUpperCase // this will not call function after ?. if str is null
+
+if you want to assign custom value when value is null then you can use elvish operator ?:
+val ans = str.toUpperCase() ?: "NA".
+
+as you are sure or you want to through null pointer exception you can use not - null assert operator !!
+
+str!!.toUpperCase() // this will throught kotlin null pointer exception
