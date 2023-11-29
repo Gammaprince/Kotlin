@@ -1,0 +1,44 @@
+enum class create object only once 
+
+enum class Day(val number : Int){
+    SUNDAY(1),
+    MONDAY(2),
+    TUESDAY(3),
+    WEDNESDAY(4),
+    THURDSAY(5),
+    FRIDAY(6),
+    SATURDAY(7);
+
+    // we can also create methods as it is class 
+    printFormattedDay(){
+        printf("Day is $this") // this keyword will point out object on which printFromattedDay called , so here Day is SUNDAy will print
+}
+// we can call enum calass as follows 
+
+val day = Day.SUNDAY;
+print(day) //print SUNDAY
+print(day.number) // print 1
+
+
+Sealed classes
+Sealed classes restricts their type of object creation , in this class we can make multiple instances unlike to enum class
+one thing also note that sealed class subcalsses must be defined in the same file , it won't work in another file
+for eg
+
+
+sealed class Tile
+class Red(type : String? , points : Int?):Tile()
+class Blue(points : Int) : Tile()
+
+val tile : Tile = Red("Mushrooms",2);
+val points = when(tile){
+    is Red -> {
+     tile.points*2
+    }
+    is Blue -> {
+    tile.point*4
+    }
+}
+
+
+
